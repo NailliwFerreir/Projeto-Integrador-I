@@ -23,20 +23,13 @@ async function makePostRequest() {
     window.alert("Preencha todos os campos!");
     return 0;
   }
-  co = co.replace(",", ".");
-  so2 = so2.replace(",", ".");
-  no2 = no2.replace(",", ".");
-  o3 = o3.replace(",", ".");
-  mp10 = mp10.replace(",", ".");
-  mp25 = mp25.replace(",", ".");
-
   const item = {
-    co: parseFloat(co == "" ? 0 : co),
-    so2: parseFloat(so2 == "" ? 0 : so2),
-    no2: parseFloat(no2 == "" ? 0 : no2),
-    o3: parseFloat(o3 == "" ? 0 : o3),
-    mp25: parseFloat(mp25 == "" ? 0 : mp25),
-    mp10: parseFloat(mp10 == "" ? 0 : mp10),
+    co: parseFloat(co.replace(",", ".")),
+    so2: parseFloat(so2.replace(",", ".")),
+    no2: parseFloat(no2.replace(",", ".")),
+    o3: parseFloat(o3.replace(",", ".")),
+    mp25: parseFloat(mp25.replace(",", ".")),
+    mp10: parseFloat(mp10.replace(",", ".")),
   };
   await fetch(`${url}/sample`, {
     method: "POST",
@@ -53,8 +46,11 @@ async function makePostRequest() {
       document.getElementById("insert-mp10").value = "";
       window.alert("Amostra Inserida!");
     })
+    .finally(async () => {
+      await makeGetRequest();
+      await getClassificationInfo();
+    })
     .catch((error) => console.log(`Error is : ${error}`));
-  await makeGetRequest();
 }
 async function makeGetRequest() {
   const tbody = document.querySelector(".table-rows");
@@ -111,21 +107,13 @@ async function makePutRequest(code) {
     window.alert("Preencha todos os campos!");
     return 0;
   }
-
-  co = co.replace(",", ".");
-  so2 = so2.replace(",", ".");
-  no2 = no2.replace(",", ".");
-  o3 = o3.replace(",", ".");
-  mp10 = mp10.replace(",", ".");
-  mp25 = mp25.replace(",", ".");
-
   const item = {
-    co: parseFloat(co == "" ? 0 : co),
-    so2: parseFloat(so2 == "" ? 0 : so2),
-    no2: parseFloat(no2 == "" ? 0 : no2),
-    o3: parseFloat(o3 == "" ? 0 : o3),
-    mp25: parseFloat(mp25 == "" ? 0 : mp25),
-    mp10: parseFloat(mp10 == "" ? 0 : mp10),
+    co: parseFloat(co.replace(",", ".")),
+    so2: parseFloat(so2.replace(",", ".")),
+    no2: parseFloat(no2.replace(",", ".")),
+    o3: parseFloat(o3.replace(",", ".")),
+    mp25: parseFloat(mp25.replace(",", ".")),
+    mp10: parseFloat(mp10.replace(",", ".")),
   };
   await fetch(`${url}/sample/${code}`, {
     method: "PUT",
@@ -144,8 +132,10 @@ async function makePutRequest(code) {
       document.getElementById("alter-mp10").value = "";
       window.alert("Amostra alterada!");
     })
-    .finally(() => makeGetRequest())
-    .catch((error) => console.log(error));
+    .finally(async () => {
+      await makeGetRequest();
+      await getClassificationInfo();
+    })    .catch((error) => console.log(error));
 }
 async function makeDeleteRequest(code) {
   if (
@@ -167,7 +157,10 @@ async function makeDeleteRequest(code) {
         textSelect;
       window.alert("Amostra excluída!");
     })
-    .finally(() => makeGetRequest())
+    .finally(async () => {
+      await makeGetRequest();
+      await getClassificationInfo();
+    })
     .catch((error) => console.log(error));
 }
 async function getClassificationInfo() {

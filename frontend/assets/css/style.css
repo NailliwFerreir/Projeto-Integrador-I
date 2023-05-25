@@ -1,5 +1,5 @@
 * {
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Inter", sans-serif;
 }
 
@@ -9,16 +9,10 @@ main {
   flex-wrap: wrap;
 }
 h1 {
-  font-size: 36px;
+  font-size: 34px;
   color: #326c3f;
   text-align: center;
 }
-/* .Logo {
-  font-size: 50px;
-  font-weight: bold;
-  margin: 0px 100px;
-  margin-top: 10px;
-} */
 .Logo {
   margin-top: 20px;
   margin-left: 100px;

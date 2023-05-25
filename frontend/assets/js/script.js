@@ -61,7 +61,7 @@ window.onload = function () {
   document.querySelectorAll(".option-inputs input").forEach((inputs) =>
     inputs.addEventListener("keyup", function () {
       if (this.value.length === 1 && (this.value === ',' || this.value === '.')) {
-        this.value = this.value.replace("");
+        this.value = this.value='0.';
       }
       this.value = this.value.replace(/[^0-9.,]+/g, "");
     })

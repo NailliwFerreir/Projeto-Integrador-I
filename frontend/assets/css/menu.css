@@ -1,19 +1,30 @@
 button {
   cursor: pointer;
   color: white;
-  background-color: var(--green2-lttr);
+  background-color: var(--green-4);
   width: 130px;
+  transition: all ease 350ms;
+  &:hover {
+    opacity: .9;
+  }
 }
 body {
-  background-color: var(--bg-input);
+  background-color:var(--green-2);
 }
 :root {
-  --bg-input: #c8f6d2;
-  --bg-input-light: #deffe6;
-  --green-lttr: #326c3f;
-  --cancel-bg: #c04c3c;
-  --green2-lttr: #4b9b5c;
-  --green-bg-ltr: #75a17f;
+  --green-1: #deffe6;
+  --green-2: #c8f6d2;
+  --green-3: #75a17f;
+  --green-4: #4b9b5c;
+  --green-5: #326c3f;
+
+  --red-1: #c04c3c;
+
+  --blue-1:#b7deff;
+  --blue-2:#8eccff;
+  --blue-3:#529ad4;
+  --blue-4:#002fcaaf;
+  --blue-4:#001f83af;
 }
 .container {
   width: auto;
@@ -21,7 +32,7 @@ body {
   max-width: 1550px;
 }
 .menu {
-  width: 600px;
+  width: 580px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -43,13 +54,14 @@ body {
 #option-alter,
 #option-delete {
   color: white;
-  background-color: var(--green-bg-ltr);
+  background-color: var(--green-3);
   padding: 15px 65px;
   border-radius: 10px;
   margin: auto 5px;
   cursor: pointer;
+  transition: all ease 350ms;
   &:hover {
-    background-color: var(--green2-lttr);
+    background-color: var(--green-4);
   }
 }
 
@@ -58,10 +70,10 @@ body {
 .option-delete {
   width: auto;
   height: 200px;
-  background-color: var(--bg-input-light);
+  background-color: var(--green-1);
   border-radius: 20px;
   padding: 20px;
-  color: var(--green-lttr);
+  color: var(--green-5);
 }
 .edit-top {
   display: flex;
@@ -73,37 +85,37 @@ body {
   display: none;
 }
 .option-delete button {
-  color: var(--cancel-bg);
-  background-color: var(--bg-input);
+  color: var(--red-1);
+  background-color: var(--green-2);
   border: none;
   padding: 10px 25px;
   border-radius: 20px;
   font-weight: bold;
   &:hover {
-    background-color: var(--cancel-bg);
+    background-color: var(--red-1);
     color: white;
     box-shadow: 0px 1px 5px rgb(170, 168, 168);
   }
 }
 
 .option-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   width: fit-content;
   margin-bottom: 15px;
 }
 .option-inputs input {
-  background-color: var(--bg-input);
+  background-color: var(--green-2);
   width: 130px;
   padding: 10px 12px;
   text-align: center;
   border: none;
   border-radius: 20px;
   outline: none;
-  color: var(--green-lttr);
+  color: var(--green-5);
   &::placeholder {
     text-align: center;
-    color: var(--green-lttr);
+    color: var(--green-5);
   }
 }
 .input-top,
@@ -116,20 +128,11 @@ body {
 .option-inputs button {
   display: block;
   color: white;
-  background-color: var(--green2-lttr);
+  background-color: var(--green-4);
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
   margin: auto;
-  font-weight: bold;
-}
-.option-content select {
-  background-color: var(--bg-input);
-  border: none;
-  color: var(--green2-lttr);
-  padding: 10px 20px;
-  border-radius: 20px;
-  outline: none;
   font-weight: bold;
 }
 .classification .text {
@@ -137,9 +140,9 @@ body {
 }
 .classification {
   margin-top: 15px;
-  color: var(--green-lttr);
+  color: var(--green-5);
   padding: 20px;
-  background-color: var(--bg-input-light);
+  background-color: var(--green-1);
   border-radius: 20px;
   min-height: 150px;
 }
@@ -153,7 +156,7 @@ body {
 }
 
 option {
-  background-color: var(--green-lttr);
+  background-color: var(--green-5);
   color: white;
   padding: 10px;
   text-align: center;
@@ -165,7 +168,7 @@ option {
 }
 
 strong {
-  color: var(--cancel-bg);
+  color: var(--red-1);
 }
 .division .choose-delete {
   display: flex;
@@ -196,7 +199,7 @@ strong {
 
 .select-item {
   text-align: center;
-  background-color: var(--green-lttr);
+  background-color: var(--green-5);
   padding: 8px 16px;
   cursor: pointer;
   border-bottom: 2px solid white;
@@ -209,7 +212,7 @@ strong {
     border-bottom-right-radius: 15px;
   }
   &:hover {
-    background-color: var(--green2-lttr);
+    background-color: var(--green-4);
   }
 }
 .select-icon {
@@ -223,7 +226,7 @@ strong {
 .select-selected {
   text-align: center;
   font-weight: bold;
-  background-color: var(--bg-input);
+  background-color: var(--green-2);
   padding: 8px 16px;
   border: none;
   cursor: pointer;

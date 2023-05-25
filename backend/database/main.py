@@ -1,8 +1,8 @@
 import oracledb
 
 connection = oracledb.connect(
-    user="username",
-    password="password",
+    user="willianUsertestes",
+    password="senha",
     dsn="localhost/xe")
 
 print("\n\nSuccessfully connected to Oracle Database\n")
