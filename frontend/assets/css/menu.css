@@ -1,0 +1,231 @@
+button {
+  cursor: pointer;
+  color: white;
+  background-color: var(--green2-lttr);
+  width: 130px;
+}
+body {
+  background-color: var(--bg-input);
+}
+:root {
+  --bg-input: #c8f6d2;
+  --bg-input-light: #deffe6;
+  --green-lttr: #326c3f;
+  --cancel-bg: #c04c3c;
+  --green2-lttr: #4b9b5c;
+  --green-bg-ltr: #75a17f;
+}
+.container {
+  width: auto;
+  margin: auto;
+  max-width: 1550px;
+}
+.menu {
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.option-content {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-options {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+#option-insert,
+#option-alter,
+#option-delete {
+  color: white;
+  background-color: var(--green-bg-ltr);
+  padding: 15px 65px;
+  border-radius: 10px;
+  margin: auto 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--green2-lttr);
+  }
+}
+
+.option-alter,
+.option-insert,
+.option-delete {
+  width: auto;
+  height: 200px;
+  background-color: var(--bg-input-light);
+  border-radius: 20px;
+  padding: 20px;
+  color: var(--green-lttr);
+}
+.edit-top {
+  display: flex;
+}
+.option-alter {
+  display: none;
+}
+.option-delete {
+  display: none;
+}
+.option-delete button {
+  color: var(--cancel-bg);
+  background-color: var(--bg-input);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: bold;
+  &:hover {
+    background-color: var(--cancel-bg);
+    color: white;
+    box-shadow: 0px 1px 5px rgb(170, 168, 168);
+  }
+}
+
+.option-title {
+  font-size: 24px;
+  font-weight: bold;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+.option-inputs input {
+  background-color: var(--bg-input);
+  width: 130px;
+  padding: 10px 12px;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  color: var(--green-lttr);
+  &::placeholder {
+    text-align: center;
+    color: var(--green-lttr);
+  }
+}
+.input-top,
+.input-bottom {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.option-inputs button {
+  display: block;
+  color: white;
+  background-color: var(--green2-lttr);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: auto;
+  font-weight: bold;
+}
+.option-content select {
+  background-color: var(--bg-input);
+  border: none;
+  color: var(--green2-lttr);
+  padding: 10px 20px;
+  border-radius: 20px;
+  outline: none;
+  font-weight: bold;
+}
+.classification .text {
+  margin-bottom: 15px;
+}
+.classification {
+  margin-top: 15px;
+  color: var(--green-lttr);
+  padding: 20px;
+  background-color: var(--bg-input-light);
+  border-radius: 20px;
+  min-height: 150px;
+}
+.classification button {
+  display: block;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+option {
+  background-color: var(--green-lttr);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.division {
+  display: flex;
+  align-items: center;
+}
+
+strong {
+  color: var(--cancel-bg);
+}
+.division .choose-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  height: 150px;
+}
+
+/*selecct*/
+
+.custom-select {
+  min-width: 130px;
+  position: relative;
+  display: inline-block;
+}
+
+.select-items {
+  position: absolute;
+
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+  display: none;
+  color: white;
+}
+
+.select-item {
+  text-align: center;
+  background-color: var(--green-lttr);
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid white;
+  &:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  &:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  &:hover {
+    background-color: var(--green2-lttr);
+  }
+}
+.select-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  /* adicione outros estilos conforme necessário */
+}
+
+.select-selected {
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--bg-input);
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}

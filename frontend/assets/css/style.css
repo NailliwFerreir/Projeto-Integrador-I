@@ -1,0 +1,83 @@
+* {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+h1 {
+  font-size: 36px;
+  color: #326c3f;
+  text-align: center;
+}
+/* .Logo {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0px 100px;
+  margin-top: 10px;
+} */
+.Logo {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+/*Table*/
+.table {
+  margin: auto;
+  width: 650px;
+  background-color: #deffe6;
+  padding: 30px 20px;
+  border-radius: 20px;
+  color: #326c3f;
+}
+.table-rows {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Oculta a barra de rolagem no Firefox */
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
+.table-row {
+  display: flex;
+}
+.table-row.header {
+  margin-bottom: 20px;
+  &:first-child .table-cell {
+    border: none;
+  }
+}
+
+.table-cell {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 8px;
+  padding-top: 16px;
+  border-bottom: 1px solid #326c3f;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 550px;
+}
+.option-alter .select-items,
+.option-delete .select-items {
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
