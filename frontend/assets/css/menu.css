@@ -5,11 +5,11 @@ button {
   width: 130px;
   transition: all ease 350ms;
   &:hover {
-    opacity: .9;
+    opacity: 0.9;
   }
 }
 body {
-  background-color:var(--green-2);
+  background-color: var(--green-2);
 }
 :root {
   --green-1: #deffe6;
@@ -20,11 +20,11 @@ body {
 
   --red-1: #c04c3c;
 
-  --blue-1:#b7deff;
-  --blue-2:#8eccff;
-  --blue-3:#529ad4;
-  --blue-4:#002fcaaf;
-  --blue-4:#001f83af;
+  --blue-1: #b7deff;
+  --blue-2: #8eccff;
+  --blue-3: #529ad4;
+  --blue-4: #002fcaaf;
+  --blue-4: #001f83af;
 }
 .container {
   width: auto;
@@ -69,7 +69,7 @@ body {
 .option-insert,
 .option-delete {
   width: auto;
-  height: 200px;
+  height: 180px;
   background-color: var(--green-1);
   border-radius: 20px;
   padding: 20px;
@@ -175,7 +175,7 @@ strong {
   flex-direction: column;
   justify-content: space-between;
   margin: 20px;
-  height: 150px;
+  height: 100px;
 }
 
 /*selecct*/
@@ -231,4 +231,49 @@ strong {
   border: none;
   cursor: pointer;
   border-radius: 20px;
+}
+
+#blocks {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.blocks-item {
+  width: 80px;
+  height: 90px;
+  background: var(--green-2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.15);
+}
+.box-name,
+.box-value {
+  font-weight: bolder;
+}
+.box-name {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--green-5);
+  width: inherit;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: auto;
+}
+
+.box-value {
+  color: var(--green-5);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }

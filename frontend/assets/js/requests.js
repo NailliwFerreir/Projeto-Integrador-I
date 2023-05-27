@@ -170,11 +170,18 @@ async function getClassificationInfo() {
     .then((json) => {
       console.log(json["result"][0]);
       document.querySelector(".classification .option-title").innerHTML =
-        "Qualidade do ar : " + json["result"][0];
+        "Qualidade do ar: " + json["result"][0];
       console.log(json["result"][1]);
       document.querySelector(
         ".classification .text"
-      ).innerHTML = `${json["result"][1]}<br/> MP10 (${json["average"][0]}), MP25 (${json["average"][1]}), O3 (${json["average"][2]}), CO (${json["average"][3]}), NO2 (${json["average"][4]}), SO2 (${json["average"][5]})`;
+      ).innerHTML = `${json["result"][1]}`;
+      document.getElementById('classif-mp10').innerHTML = json["average"][0];/* <br/> MP10 (${json["average"][0]}), MP25 (${json["average"][1]}), O3 (${json["average"][2]}), CO (${json["average"][3]}), NO2 (${json["average"][4]}), SO2 (${json["average"][5]}) */
+      document.getElementById('classif-mp25').innerHTML = json["average"][1];
+      document.getElementById('classif-o3').innerHTML = json["average"][2];
+      document.getElementById('classif-co').innerHTML = json["average"][3];
+      document.getElementById('classif-no2').innerHTML = json["average"][4];
+      document.getElementById('classif-so2').innerHTML = json["average"][5];
+      document.getElementById('blocks').style.display = 'flex';
     })
     .catch((err) => console.log(err));
 }
