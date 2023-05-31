@@ -66,7 +66,8 @@ async function makeGetRequest() {
       for (let i in samples) {
         let newRowTable = document.createElement("div");
         newRowTable.setAttribute("class", "table-row");
-        newRowTable.innerHTML = `<div class="table-cell">${samples[i][0]}</div><div class="table-cell">${samples[i][1]}</div><div class="table-cell">${samples[i][2]}</div><div class="table-cell">${samples[i][3]}</div><div class="table-cell">${samples[i][4]}</div><div class="table-cell">${samples[i][5]}</div><div class="table-cell">${samples[i][6]}</div>`;
+        // INSERIDO NA LINHA 70 A NOVA COLUNA E O SEU RESPECTIVO DADO
+        newRowTable.innerHTML = `<div class="table-cell">${samples[i][0]}</div><div class="table-cell">${samples[i][1]}</div><div class="table-cell">${samples[i][2]}</div><div class="table-cell">${samples[i][3]}</div><div class="table-cell">${samples[i][4]}</div><div class="table-cell">${samples[i][5]}</div><div class="table-cell">${samples[i][6]}</div><div class="table-cell">${samples[i][7]}</div>`;
         tbody.append(newRowTable);
       }
       for (let id in samples) {

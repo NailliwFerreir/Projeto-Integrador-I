@@ -13,14 +13,14 @@ try:
     cursor.execute("""
         create table amostras (
         id number generated always as identity,
-        mp10 number(*),mp25 number(*),o3 number(*), co number(*),no2 number(*),so2 number(*),
-        primary key (id))""")
+        mp10 number(*),mp25 number(*),o3 number(*), co number(*),no2 number(*),so2 number(*), classification varchar2(30),
+        primary key (id))""") # CRIADA A COLUNA DE CLASSIFICATION 
     print("Table created")
 except:
     print("Table already created\n")
 
-def insertSamplesDb(co, so2, no2, o3, mp25, mp10):
-    query = (f"insert into amostras(co, so2, no2, o3, mp25, mp10) values ({co}, {so2}, {no2}, {o3}, {mp25},{ mp10})")
+def insertSamplesDb(co, so2, no2, o3, mp25, mp10, classification):
+    query = (f"insert into amostras(co, so2, no2, o3, mp25, mp10,classification) values ({co}, {so2}, {no2}, {o3}, {mp25},{ mp10}, '{classification}')")
     try:
         cursor.execute(query)
         connection.commit()
@@ -36,9 +36,9 @@ def deleteSamplesDb(id):
     except Exception as err:
         print({err})  
 
-def updateSamplesDb(id,co, so2, no2, o3, mp25, mp10):
+def updateSamplesDb(id,co, so2, no2, o3, mp25, mp10, classification):
     try:
-        comando = (f'UPDATE amostras set co={co}, so2={so2}, no2={no2}, o3={o3}, mp25={mp25}, mp10={mp10} where id={id}') 
+        comando = (f"UPDATE amostras set co={co}, so2={so2}, no2={no2}, o3={o3}, mp25={mp25}, mp10={mp10}, classification='{classification}' where id={id}") 
         cursor.execute(comando)
         connection.commit()
     except Exception as err:
@@ -53,6 +53,7 @@ def printSamples():
 def averageSamples():
     cursor.execute("select round(avg(mp10),2),round(avg(mp25),2),round(avg(o3),2),round(avg(co),2),round(avg(no2),2),round(avg(so2),2) from amostras")
     avg = cursor.fetchone()
+    if None in avg : avg = False # AVG = FALSE CASO NÃO POSSUA AMOSTRAS REGISTRADAS NO BANCO
     return avg
 
      
