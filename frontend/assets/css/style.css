@@ -20,7 +20,7 @@ h1 {
 /*Table*/
 .table {
   margin: auto;
-  width: 650px;
+  width: 810px; /* ALTERADO DE 650 PARA 810 PARA A COLUNA QUALIDADE */
   background-color: #deffe6;
   padding: 30px 20px;
   border-radius: 20px;
