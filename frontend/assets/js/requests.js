@@ -67,7 +67,12 @@ async function makeGetRequest() {
         let newRowTable = document.createElement("div");
         newRowTable.setAttribute("class", "table-row");
         // INSERIDO NA LINHA 70 A NOVA COLUNA E O SEU RESPECTIVO DADO
-        newRowTable.innerHTML = `<div class="table-cell">${samples[i][0]}</div><div class="table-cell">${samples[i][1]}</div><div class="table-cell">${samples[i][2]}</div><div class="table-cell">${samples[i][3]}</div><div class="table-cell">${samples[i][4]}</div><div class="table-cell">${samples[i][5]}</div><div class="table-cell">${samples[i][6]}</div><div class="table-cell">${samples[i][7]}</div>`;
+        let classification = samples[i][7]
+        console.log(classification[0])
+        if ((classification[0] === 'B')||(classification[0] === 'P')){
+          classification = classification.slice(0, classification.length - 1);
+        }
+        newRowTable.innerHTML = `<div class="table-cell">${samples[i][0]}</div><div class="table-cell">${samples[i][1]}</div><div class="table-cell">${samples[i][2]}</div><div class="table-cell">${samples[i][3]}</div><div class="table-cell">${samples[i][4]}</div><div class="table-cell">${samples[i][5]}</div><div class="table-cell">${samples[i][6]}</div><div class="table-cell">${classification}</div>`;
         tbody.append(newRowTable);
       }
       for (let id in samples) {
@@ -176,7 +181,7 @@ async function getClassificationInfo() {
       document.querySelector(
         ".classification .text"
       ).innerHTML = `${json["result"][1]}`;
-      document.getElementById('classif-mp10').innerHTML = json["average"][0];/* <br/> MP10 (${json["average"][0]}), MP25 (${json["average"][1]}), O3 (${json["average"][2]}), CO (${json["average"][3]}), NO2 (${json["average"][4]}), SO2 (${json["average"][5]}) */
+      document.getElementById('classif-mp10').innerHTML = json["average"][0];
       document.getElementById('classif-mp25').innerHTML = json["average"][1];
       document.getElementById('classif-o3').innerHTML = json["average"][2];
       document.getElementById('classif-co').innerHTML = json["average"][3];

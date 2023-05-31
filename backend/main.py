@@ -8,7 +8,7 @@ CORS(app, origins='*')
 
 @app.route('/samples')
 def bringSamples():
-    samples = printSamples()
+    samples = getSamplesDb()
 
     # PARTE DA DESCRIPTOGRAFIA PARA ENVIO 
     mylist = []

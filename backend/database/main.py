@@ -29,22 +29,22 @@ def insertSamplesDb(co, so2, no2, o3, mp25, mp10, classification):
 
 def deleteSamplesDb(id):
     try:
-        comando = (f'DELETE from amostras where ID={id}')
-        cursor.execute(comando)
+        query = (f'DELETE from amostras where ID={id}')
+        cursor.execute(query)
         connection.commit()
-        return "Sucess"
+        return "Success"
     except Exception as err:
         print({err})  
 
 def updateSamplesDb(id,co, so2, no2, o3, mp25, mp10, classification):
     try:
-        comando = (f"UPDATE amostras set co={co}, so2={so2}, no2={no2}, o3={o3}, mp25={mp25}, mp10={mp10}, classification='{classification}' where id={id}") 
-        cursor.execute(comando)
+        query = (f"UPDATE amostras set co={co}, so2={so2}, no2={no2}, o3={o3}, mp25={mp25}, mp10={mp10}, classification='{classification}' where id={id}") 
+        cursor.execute(query)
         connection.commit()
     except Exception as err:
         print({err})
 
-def printSamples():
+def getSamplesDb():
     samplesDb=[]
     for row in cursor.execute('SELECT * from amostras order by id asc'):
         samplesDb.append(row)
@@ -55,7 +55,3 @@ def averageSamples():
     avg = cursor.fetchone()
     if None in avg : avg = False # AVG = FALSE CASO NÃO POSSUA AMOSTRAS REGISTRADAS NO BANCO
     return avg
-
-     
-    
-    

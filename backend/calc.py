@@ -1,5 +1,4 @@
 def validateQuality(mp10, mp25, o3, co, no2, so2):
-    print(mp10, mp25, o3, co, no2, so2)
     boa = [['Boa'], ['Sem riscos à saúde.']]
     moderada = [['Moderada'], [
         'Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço.A população, em geral, não é afetada.']]
